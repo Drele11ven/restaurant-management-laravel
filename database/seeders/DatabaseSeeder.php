@@ -18,6 +18,11 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(3)->create([
             'role' => 'Restaurant Manager', // Ensure role is 'Restaurant Manager'
         ]);
+        // Create users (including restaurant managers and customers)
+        \App\Models\User::factory(5)->create(); // 5 users for testing purposes
+
+        // Create food categories
+        $foodCategories = \App\Models\FoodCategory::factory(5)->create(); // Create 5 food categories
 
         // Create restaurants with managers
         \App\Models\Restaurant::factory(3)->create(); // 3 restaurants
@@ -44,7 +49,7 @@ class DatabaseSeeder extends Seeder
         }
 
         // Create foods
-        \App\Models\Food::factory(10)->create(); // 10 food items
+        \App\Models\Food::factory(50)->create(); // 10 food items
 
         // Attach foods to categories (many-to-many)
         $foods = \App\Models\Food::all();
