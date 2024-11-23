@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('food_category_food', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('food_id')->constrained()->onDelete('cascade');
-            $table->foreignId('food_category_id')->constrained()->onDelete('cascade');
+            $table->foreignId('food_id')->unsigned();
+            $table->foreign('food_id')->references('id')->on('foods')->onDelete('cascade');
+
+            $table->foreignId('food_category_id')->unsigned();
+            $table->foreign('food_category_id')->references('id')->on('food_categories')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
