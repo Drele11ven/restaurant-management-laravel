@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
         // Create foods
         \App\Models\Food::factory(50)->create(); // 10 food items
 
-        // Attach foods to categories (many-to-many)
+        // Attach foods to categorize (many-to-many)
         $foods = \App\Models\Food::all();
         $foodCategories = \App\Models\FoodCategory::all();
         foreach ($foods as $food) {
