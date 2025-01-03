@@ -1,0 +1,112 @@
+Entities and Attributes
+User
+
+id (PK)
+name
+phone_number (unique)
+password
+role (enum: Admin, Restaurant Manager, Customer)
+created_at
+updated_at
+Restaurant
+
+id (PK)
+name
+address
+manager_id (FK to User.id, where role = Restaurant Manager)
+created_at
+updated_at
+RestaurantCategory
+
+id (PK)
+name
+created_at
+updated_at
+RestaurantCategory_Restaurant (junction table)
+
+id (PK)
+restaurant_id (FK to Restaurant.id)
+restaurant_category_id (FK to RestaurantCategory.id)
+Food
+
+id (PK)
+name
+price
+image_path
+description
+inventory_count
+status (enum: Available, Unavailable)
+restaurant_id (FK to Restaurant.id)
+created_at
+updated_at
+FoodCategory
+
+id (PK)
+name
+created_at
+updated_at
+FoodCategory_Food (junction table)
+
+id (PK)
+food_id (FK to Food.id)
+food_category_id (FK to FoodCategory.id)
+Order
+
+id (PK)
+restaurant_id (FK to Restaurant.id)
+user_id (FK to User.id)
+total_price
+status (enum: New, Preparing, Dispatched, Delivered)
+created_at
+updated_at
+OrderDetail
+
+id (PK)
+order_id (FK to Order.id)
+food_id (FK to Food.id)
+quantity
+subtotal_price
+UserAddress
+
+id (PK)
+user_id (FK to User.id)
+address
+created_at
+updated_at
+Relationships
+User to Restaurant:
+
+One-to-One: A restaurant has one manager, and a manager manages one restaurant.
+Enforced via Restaurant.manager_id.
+User to UserAddress:
+
+One-to-Many: A user can have multiple addresses.
+Enforced via UserAddress.user_id.
+Restaurant to RestaurantCategory:
+
+Many-to-Many: A restaurant can belong to multiple categories.
+Enforced via RestaurantCategory_Restaurant.
+Restaurant to Food:
+
+One-to-Many: A restaurant can offer multiple foods.
+Enforced via Food.restaurant_id.
+Food to FoodCategory:
+
+Many-to-Many: A food item can belong to multiple categories.
+Enforced via FoodCategory_Food.
+Restaurant to Order:
+
+One-to-Many: A restaurant can have multiple orders.
+Enforced via Order.restaurant_id.
+Order to OrderDetail:
+
+One-to-Many: An order can have multiple order details.
+Enforced via OrderDetail.order_id.
+Food to OrderDetail:
+
+One-to-Many: A food item can appear in multiple order details.
+Enforced via OrderDetail.food_id.
+User to Order:
+
+One-to-Many: A user can place multiple orders.
+Enforced via Order.user_id.
