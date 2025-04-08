@@ -49,7 +49,7 @@ php artisan serve
 
 ---
 
-##🧠 Features
+## 🧠 Features
 -🏪 Multi-Restaurant Architecture
 Each restaurant has its own independent set of menus, orders, and categories.
 
