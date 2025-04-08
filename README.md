@@ -50,30 +50,30 @@ php artisan serve
 ---
 
 ## 🧠 Features
--🏪 Multi-Restaurant Architecture
+- 🏪 Multi-Restaurant Architecture
 Each restaurant has its own independent set of menus, orders, and categories.
 
--🍽️ Menu & Dish Management
+- 🍽️ Menu & Dish Management
 Create and categorize dishes, set prices, descriptions, and availability.
 
--📦 Order System (Basic)
+- 📦 Order System (Basic)
 Simple order placement, listing, and status update functionality for testing flow.
 
--⚙️ Role-Based Access
+- ⚙️ Role-Based Access
 Admins manage all restaurants; restaurant managers have access only to their restaurant.
 
 ---
 
 ## 📦 Future Ideas
--Add delivery agent roles
+- Add delivery agent roles
 
--Implement payment gateways
+- Implement payment gateways
 
--Advanced order tracking
+- Advanced order tracking
 
--Mobile API with Sanctum or Passport
+- Mobile API with Sanctum or Passport
 
--Customer review and rating system
+- Customer review and rating system
 
 ---
 
