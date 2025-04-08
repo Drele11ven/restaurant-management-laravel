@@ -25,7 +25,7 @@ The goal is to create a scalable structure suitable for food delivery services, 
 
 1.Clone the repository:
 ```bash
-git clone https://github.com/your-username/restaurant-management-laravel.git
+git clone https://github.com/Drele11ven/restaurant-management-laravel.git
 cd restaurant-management-laravel
 ```
 2.Install dependencies:
